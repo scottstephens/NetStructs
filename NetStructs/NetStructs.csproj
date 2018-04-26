@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.1.0</Version>
+    <Copyright>2017 Scott Stephens</Copyright>
+    <Description>NetStructs provides C# structures to represent various entities commonly used in networking, most notably IP addresses and ports. These structures are designed to be blittable with the data structures used in low-level operating system networking calls (ie, the Linux socket interface and WinSock interface).</Description>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://www.github.com/scottstephens/netstructs</PackageProjectUrl>
+    <RepositoryUrl>https://www.github.com/scottstephens/netstructs</RepositoryUrl>
+    <RepositoryType />
+    <PackageTags>C#, Networking</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="LICENSE.txt" />
+    <None Remove="README.md" />
+  </ItemGroup>
+
+</Project>
