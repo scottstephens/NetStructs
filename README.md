@@ -35,7 +35,7 @@ This software is licensed under the MIT License. You can find the full text of t
 
 ## Contributions
 
-Contributions are encouraged, you can submit them via github pull request to the repo at https://www.github.com/scottstephens/netstructs.
+Contributions are encouraged, you can submit them via github pull request to the repo at https://www.github.com/scottstephens/NetStructs.
 
 
 
