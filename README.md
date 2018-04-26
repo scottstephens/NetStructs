@@ -32,6 +32,9 @@ Additionally, in C# it's best that performance-critical paths do not generate al
 
 This software is licensed under the MIT License. You can find the full text of the license in the LICENSE.txt file and online at https://opensource.org/licenses/MIT. The license text prevails over this summary, but that generally means you can do whatever you want with it, but if you do use it, you can't sue the authors over any damages it may cause you or others.
 
+## Binaries
+
+This software is available in binary form via nuget using the package name "NetStructs". The nuget package web page is https://www.nuget.org/packages/NetStructs/
 
 ## Contributions
 
