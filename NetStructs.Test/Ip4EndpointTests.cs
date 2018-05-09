@@ -17,5 +17,32 @@ namespace NetStructs.Test
             var hc = ep.GetHashCode();
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void Parse_Full_Works()
+        {
+            var input = "10.1.2.3:54321";
+            var ep = Ip4Endpoint.Parse(input);
+            var expected = new Ip4Endpoint(new Ip4Address(10, 1, 2, 3), 54321);
+            Assert.That(ep, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void Parse_AddressOnly_Works()
+        {
+            var input = "10.1.2.3";
+            var ep = Ip4Endpoint.Parse(input);
+            var expected = new Ip4Endpoint(new Ip4Address(10, 1, 2, 3), 0);
+            Assert.That(ep, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void Parse_PortOnly_Works()
+        {
+            var input = ":54321";
+            var ep = Ip4Endpoint.Parse(input);
+            var expected = new Ip4Endpoint(Ip4Address.Any, 54321);
+            Assert.That(ep, Is.EqualTo(expected));
+        }
     }
 }

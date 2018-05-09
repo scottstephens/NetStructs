@@ -115,6 +115,40 @@ namespace NetStructs
         }
 
         /// <summary>
+        /// Parse an endpoint from the formats
+        /// address:port
+        /// address
+        /// :port
+        /// Unspecified address will be Ip4Address.Any,
+        /// unspecified port will be 0.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static Ip4Endpoint Parse(string input)
+        {
+            var output = new Ip4Endpoint();
+            if (!input.Contains(":"))
+            {
+                output.Address = Ip4Address.Parse(input);
+                output.Port = IpPort.FromHostOrder(0);
+            }
+            else
+            {
+                var parts = input.Split(':');
+                if (parts.Length != 2)
+                    throw new FormatException($"Input string {input} is not formatted as expected.");
+
+                if (parts[0] == "")
+                    output.Address = Ip4Address.Any;
+                else
+                    output.Address = Ip4Address.Parse(parts[0]);
+
+                output.Port = IpPort.FromHostOrder(Int32.Parse(parts[1]));
+            }
+            return output;
+        }
+
+        /// <summary>
         /// Copy the endpoint to a buffer in network order.
         /// </summary>
         /// <param name="buffer"></param>
